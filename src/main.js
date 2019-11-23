@@ -3,8 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import FastClick from 'fastclick'
 import "./util/rem"
 import "./assets/css/reset.css"
+import Vant from 'vant'
+import 'vant/lib/index.css'
+
+Vue.use(Vant);
+FastClick.attach(document.body)
 
 Vue.config.productionTip = false
 
