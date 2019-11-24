@@ -9,6 +9,9 @@ import "./assets/css/reset.css"
 import Vant from 'vant'
 import 'vant/lib/index.css'
 import Axios from 'axios'
+import Vuex from 'vuex'
+ 
+Vue.use(Vuex)
 
 Vue.prototype.$http=Axios
 

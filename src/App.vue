@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { Dialog } from "vant";
 import FooterGuide from "./components/footer.vue";
 export default {
   name: "App",
@@ -21,6 +22,14 @@ export default {
       transitionName: "transitionLeft",
       footShow: true
     };
+  },
+  mounted() {
+    this.dialg();
+  },
+  created() {
+    this.$router.push({
+      path: "/home"
+    });
   },
   watch: {
     $route(to, from) {
@@ -36,6 +45,20 @@ export default {
       } else {
         this.footShow = false;
       }
+    }
+  },
+  methods: {
+    dialg() {
+      Dialog.confirm({
+        title: "温馨提示",
+        message: "腾讯外卖试图开启地理定位"
+      })
+        .then(() => {
+          // on confirm
+        })
+        .catch(() => {
+          // on cancel
+        });
     }
   }
 };
