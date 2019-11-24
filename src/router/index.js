@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import Home from '../pages/home/home.vue'
 import Order from '../pages/order/order.vue'
 import Person from '../pages/person/person.vue'
-import Search from '../pages/search/search.vue'
 
 Vue.use(Router)
 
@@ -20,10 +19,6 @@ export default new Router({
     {
       path: '/person',
       component: Person
-    },
-    {
-      path: '/search',
-      component: Search
     },
     {
       path: '/',
