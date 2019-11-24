@@ -1,6 +1,9 @@
 <template>
   <div class="home">
     <div class="head-guide">
+      <!-- <van-icon name="award-o" class="location-icon" />
+      <van-icon name="arrow-down" class="switch-icon" /> -->
+      <router-link to="/indexcity" class="location">北京市</router-link>
       <van-search placeholder="请输入搜索关键词" />
       <!-- <input type="text"> -->
     </div>
@@ -12,7 +15,7 @@
   </div>
 </template>
 <script>
-import {clas,swiperimg} from "@/data/homeclas.js"
+import { clas, swiperimg } from "@/data/homeclas.js";
 export default {
   data() {
     return {
@@ -21,14 +24,13 @@ export default {
     };
   },
   mounted() {
-    this.images = swiperimg
-    this.clas = clas
-    this.getclass()
-    console.log(clas)
+    this.images = swiperimg;
+    this.clas = clas;
+    this.getclass();
+    console.log(clas);
   },
   methods: {
-    getclass(){
-    }
+    getclass() {}
   }
 };
 </script>
@@ -43,7 +45,7 @@ export default {
 .van-search {
   position: absolute;
   left: 0.18rem;
-  top: 0.36rem;
+  top: 0.4rem;
   width: 90%;
   height: 0.4rem;
   border-radius: 0.3rem;
@@ -52,4 +54,27 @@ export default {
 .van-search__content--square {
   border-radius: 0.5rem;
 }
+
+.location {
+  font-size: 0.2rem;
+  color: white;
+  position: absolute;
+  top: 0.12rem;
+  left: 0.20rem;
+}
+
+/* .location-icon {
+  font-size: 0.18rem;
+  color: white;
+  position: absolute;
+  top: 0.15rem;
+  left: 0.14rem;
+}
+.switch-icon{
+  font-size: 0.12rem;
+  color: white;
+  position: absolute;
+  top: 0.15rem;
+  left: 0.99rem;
+} */
 </style>

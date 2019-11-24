@@ -1,8 +1,7 @@
 <template>
   <div class="login">
     <div class="turn-back">
-      <van-icon name="arrow-left" @click="goback()" />
-      <p class="turn-p" @click="goback()">返回</p>
+      <van-nav-bar title left-text="返回" left-arrow @click-left="onClickLeft" />
       <div class="login-mode">
         <h1 class="login-h1">登录腾讯外卖</h1>
         <van-tabs animated color="#0089dc">
@@ -57,7 +56,7 @@ export default {
   },
   mounted() {},
   methods: {
-    goback() {
+    onClickLeft() {
       this.$router.push({ path: "/person" });
     },
     sendcode() {
@@ -101,7 +100,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.turn-back {
+/* .turn-back {
   font-size: 0.3rem;
   width: 100%;
   position: relative;
@@ -125,11 +124,12 @@ export default {
   width: 100%;
   top: 0.8rem;
 }
-
+ */
 .login-h1 {
   font-family: '楷体';
   text-align: center;
   margin-bottom: 0.3rem;
   color: #bbb;
+  font-size: 0.3rem;
 }
 </style>

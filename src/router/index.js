@@ -4,6 +4,7 @@ import Home from '../pages/home/home.vue'
 import Order from '../pages/order/order.vue'
 import Person from '../pages/person/person.vue'
 import Login from '../pages/login/login.vue'
+import Indexcity from '../pages/indexcity/indexcity.vue'
 
 Vue.use(Router)
 
@@ -29,6 +30,10 @@ export default new Router({
     {
       path:'/login',
       component:Login,
+    },
+    {
+      path:'/indexcity',
+      component:Indexcity,
     }
   ]
 })
