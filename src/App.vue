@@ -2,10 +2,10 @@
   <div id="app">
     <transition :name="transitionName">
       <keep-alive>
-        <router-view class="transitionBody"></router-view>
+        <router-view class="transitionBody">></router-view>
       </keep-alive>
     </transition>
-    <footer-guide></footer-guide>
+    <footer-guide v-if="footShow"></footer-guide>
   </div>
 </template>
 
@@ -18,7 +18,8 @@ export default {
   },
   data() {
     return {
-      transitionName: "transitionLeft"
+      transitionName: "transitionLeft",
+      footShow: true
     };
   },
   watch: {
@@ -26,6 +27,15 @@ export default {
       const arr = ["/goods", "/ratings", "/seller"];
       const compare = arr.indexOf(to.path) > arr.indexOf(from.path);
       this.transitionName = compare ? "transitionLeft" : "transitionRight";
+      if (
+        this.$route.path == "/home" ||
+        this.$route.path == "/order" ||
+        this.$route.path == "/person"
+      ) {
+        this.footShow = true;
+      } else {
+        this.footShow = false;
+      }
     }
   }
 };

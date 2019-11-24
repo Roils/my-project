@@ -3,10 +3,12 @@ import Router from 'vue-router'
 import Home from '../pages/home/home.vue'
 import Order from '../pages/order/order.vue'
 import Person from '../pages/person/person.vue'
+import Login from '../pages/login/login.vue'
 
 Vue.use(Router)
 
 export default new Router({
+  mode:'history',
   routes: [
     {
       path: '/home',
@@ -23,6 +25,10 @@ export default new Router({
     {
       path: '/',
       redirect: '/home'
+    },
+    {
+      path:'/login',
+      component:Login,
     }
   ]
 })
