@@ -14,7 +14,8 @@ import { citys } from "@/data/city.js";
 export default {
   data() {
     return {
-        citys:[]
+        citys:[],
+        currentcity:""
     };
   },
   mounted(){

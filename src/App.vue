@@ -24,7 +24,6 @@ export default {
     };
   },
   mounted() {
-    this.dialg();
   },
   created() {
     this.$router.push({
@@ -48,18 +47,6 @@ export default {
     }
   },
   methods: {
-    dialg() {
-      Dialog.confirm({
-        title: "温馨提示",
-        message: "腾讯外卖试图开启地理定位"
-      })
-        .then(() => {
-          // on confirm
-        })
-        .catch(() => {
-          // on cancel
-        });
-    }
   }
 };
 </script>

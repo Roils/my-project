@@ -2,8 +2,8 @@
   <div class="home">
     <div class="head-guide">
       <!-- <van-icon name="award-o" class="location-icon" />
-      <van-icon name="arrow-down" class="switch-icon" /> -->
-      <router-link to="/indexcity" class="location">北京市</router-link>
+      <van-icon name="arrow-down" class="switch-icon" />-->
+      <router-link to="/indexcity" class="location">{{ currentcity }}</router-link>
       <van-search placeholder="请输入搜索关键词" />
       <!-- <input type="text"> -->
     </div>
@@ -15,12 +15,14 @@
   </div>
 </template>
 <script>
+import { Dialog } from "vant";
 import { clas, swiperimg } from "@/data/homeclas.js";
 export default {
   data() {
     return {
       images: [],
-      clas: []
+      clas: [],
+      currentcity: "未定位"
     };
   },
   mounted() {
@@ -30,7 +32,18 @@ export default {
     console.log(clas);
   },
   methods: {
-    getclass() {}
+    getclass() {
+      Dialog.confirm({
+        title: "温馨提示",
+        message: "腾讯外卖试图开启地理定位"
+      })
+        .then(() => {
+          this.currentcity = "北京"
+        })
+        .catch(() => {
+          // on cancel
+        });
+    }
   }
 };
 </script>
@@ -60,7 +73,7 @@ export default {
   color: white;
   position: absolute;
   top: 0.12rem;
-  left: 0.20rem;
+  left: 0.2rem;
 }
 
 /* .location-icon {
