@@ -7,11 +7,14 @@
       <van-search placeholder="请输入搜索关键词" />
       <!-- <input type="text"> -->
     </div>
-    <van-swipe :autoplay="3000" style="height:1.2rem">
+    <van-swipe :autoplay="3000" style="height:2rem">
       <van-swipe-item v-for="(image, index) in images" :key="index" style="height:1.2rem">
-        <img :src="image" style="width:100%;height:100%;overflow:hidden" />
+        <img :src="image" style="width:100%;height:2rem;overflow:hidden" />
       </van-swipe-item>
     </van-swipe>
+    <van-grid :column-num="3" :border="false">
+      <van-grid-item v-for="value in 6" :key="value" icon="photo-o" :text="currentcity" />
+    </van-grid>
   </div>
 </template>
 <script>
@@ -38,7 +41,7 @@ export default {
         message: "腾讯外卖试图开启地理定位"
       })
         .then(() => {
-          this.currentcity = "北京"
+          this.currentcity = "北京";
         })
         .catch(() => {
           // on cancel
@@ -51,14 +54,14 @@ export default {
 <style lang="stylus">
 .head-guide {
   background-color: #0089dc;
-  height: 0.9rem;
+  height: 0.8rem;
   position: relative;
 }
 
 .van-search {
   position: absolute;
   left: 0.18rem;
-  top: 0.4rem;
+  top: 0.18rem;
   width: 90%;
   height: 0.4rem;
   border-radius: 0.3rem;
@@ -69,11 +72,11 @@ export default {
 }
 
 .location {
-  font-size: 0.2rem;
+  font-size: 0.15rem;
   color: white;
   position: absolute;
   top: 0.12rem;
-  left: 0.2rem;
+  left: 0.1rem;
 }
 
 /* .location-icon {
